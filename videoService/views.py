@@ -33,7 +33,7 @@ class VideoView(viewsets.ModelViewSet):
                 {"status":status.HTTP_400_BAD_REQUEST,"message":serializer.errors}
             )
             
-        video=serializer.save()
+        video=serializer.save(length=serializer.initial_data["length"],size=serializer.initial_data["size"])
         return Response(
                 {"status":status.HTTP_201_CREATED,"message":"successfully created a video","id":video.id}
             )

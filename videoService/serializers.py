@@ -32,7 +32,7 @@ class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model=Video
         fields=["title","video","length","size","type","created_at"]
-        read_only_fields=["created_at"]
+        read_only_fields=["created_at","length","size"]
         
 
 
